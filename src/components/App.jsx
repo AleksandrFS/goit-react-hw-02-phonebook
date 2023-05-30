@@ -19,6 +19,7 @@ export class App extends Component {
 
     this.addContact(this.state.name, this.state.number);
   };
+  
 
   addContact = (name, number) => {
     const contactData = {
