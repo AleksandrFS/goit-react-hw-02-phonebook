@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import css from './Contact.module.css';
 export const Contact = ({ name, number, deleteContact, id }) => {
   return (
-    <li className={css.contact}>
+    <div className={css.contact}>
       <p>
         {name}: {number}
       </p>
@@ -13,7 +13,7 @@ export const Contact = ({ name, number, deleteContact, id }) => {
       >
         Delete
       </button>
-    </li>
+    </div>
   );
 };
 

@@ -7,23 +7,21 @@ export class ContactForm extends Component {
   state = {
     name: '',
     number: '',
-    id: '',
   };
 
   handleInputChange = e => {
     this.setState({
       [e.target.name]: e.target.value,
-      id: nanoid(),
     });
   };
 
   handleSubmit = e => {
-    const { name, number, id } = this.state;
+    const { name, number } = this.state;
     e.preventDefault();
     this.props.contacts.find(contact => contact.name === name)
       ? alert(`${this.state.name} is already in contacts`)
-      : this.props.addContact(name, number, id);
-    this.setState({ name: '', number: '', id: '' });
+      : this.props.addContact(name, number);
+    this.setState({ name: '', number: '' });
   };
 
   render() {

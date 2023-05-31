@@ -1,3 +1,4 @@
+import { nanoid } from 'nanoid';
 import { Component } from 'react';
 import { ContactForm } from './ContactForm/ContactForm';
 import { Filter } from './Filter/Filter';
@@ -14,11 +15,11 @@ export class App extends Component {
     filter: '',
   };
 
-  addContact = (name, number, id) => {
+  addContact = (name, number) => {
     const contactData = {
       name,
       number,
-      id,
+      id: nanoid(),
     };
     this.setState(prevState => ({
       contacts: [contactData, ...prevState.contacts],

@@ -10,18 +10,7 @@ export const ContactList = ({ contacts, filter, deleteContact }) => {
 
   return (
     <ul className={css.list}>
-      {filter === ''
-        ? contacts.map(({ name, number, id }) => (
-            <li key={nanoid()} className={css.contactList}>
-              <Contact
-                id={id}
-                name={name}
-                number={number}
-                deleteContact={deleteContact}
-              />
-            </li>
-          ))
-        : filteredContacts.map(({ name, number, id }) => (
+     {filteredContacts.map(({ name, number, id }) => (
             <li key={nanoid()} className={css.contactList}>
               <Contact
                 id={id}
